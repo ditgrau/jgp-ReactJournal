@@ -10,8 +10,8 @@ function Balance() {
 
     return (
         <div>
-            <h1>Balance</h1>
-            <p>{JSON.stringify(total, null, 2)}</p>
+            <h3>Your balance</h3>
+            <h1>${total}</h1>
         </div>
     )
 }
