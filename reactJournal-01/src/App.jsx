@@ -2,7 +2,8 @@ import { useState } from 'react'
 import { GlobalProvider } from './context/GlobalState'
 import Header from './components/Header'
 import Balance from './components/Balance'
-import TransactionForm from './components/TransactionForm'
+import TransactionForm from './components/transactions/TransactionForm'
+import TransactionList from './components/transactions/transactionList'
 
 
 function App() {
@@ -11,10 +12,11 @@ function App() {
     <>
       <GlobalProvider>
         <Header/>
-        <Balance></Balance>
-        <TransactionForm>
-          
-        </TransactionForm>
+        <Balance/>
+        <TransactionForm/>
+        <TransactionList/>
+    
+      
         <h1>Hello world</h1>
       </GlobalProvider>
     </>
