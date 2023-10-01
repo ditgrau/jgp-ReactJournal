@@ -9,7 +9,7 @@ function TransactionForm() {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        addTransaction({id:1, description, amount})
+        addTransaction({ id: window.crypto.randomUUID(), description, amount })
         console.log(description, amount)
     }
 

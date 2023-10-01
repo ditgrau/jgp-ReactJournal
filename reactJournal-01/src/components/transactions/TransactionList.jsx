@@ -8,7 +8,7 @@ function TransactionList() {
     return (
         <div>{
             transactions.map(transaction => (
-                <div>
+                <div key={transaction.id}>
                     <p>{transaction.description}</p>
                     <span>{transaction.amount}</span>
                 </div>
