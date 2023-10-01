@@ -9,7 +9,10 @@ function TransactionForm() {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        addTransaction({ id: window.crypto.randomUUID(), description, amount })
+        addTransaction({ 
+            id: window.crypto.randomUUID(), 
+            description, 
+            amount: +amount }) //lo convierte en integer 
         console.log(description, amount)
     }
 
