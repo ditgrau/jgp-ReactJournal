@@ -12,14 +12,19 @@ function App() {
   return (
     <>
       <GlobalProvider>
-        <Header />
-        <IncomeExpenses />
-        <Balance />
-        <TransactionForm />
-        <TransactionList />
-        <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+        <div className='bg-zinc-900 text-white h-screen flex justify-center items-center'>
+          <div className='bg-zinc-800 p-10 rounded-lg flex'>
+            <div>
+              <Header />
+              <IncomeExpenses />
+              <Balance />
+              <TransactionForm />
+            </div>
+            <div>
+              <TransactionList />
+            </div>
+          </div>
+        </div>
       </GlobalProvider>
     </>
   )
