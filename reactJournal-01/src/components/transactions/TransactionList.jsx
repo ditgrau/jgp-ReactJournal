@@ -9,11 +9,13 @@ function TransactionList() {
     return (
         <>
             <h3>History</h3>
+            <ul>
             {
                 transactions.map(transaction => (
                     <TransactionItem transaction={transaction} key={transaction.id}/>
                 ))
             }
+            </ul>
         </>
     )
 }
