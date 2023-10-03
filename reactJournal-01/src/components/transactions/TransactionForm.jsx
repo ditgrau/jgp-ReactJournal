@@ -13,7 +13,6 @@ function TransactionForm() {
             id: window.crypto.randomUUID(), 
             description, 
             amount: +amount }) //lo convierte en integer 
-        console.log(description, amount)
     }
 
     return (
