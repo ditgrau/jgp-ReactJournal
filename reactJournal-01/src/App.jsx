@@ -4,6 +4,7 @@ import Balance from './components/Balance'
 import TransactionForm from './components/transactions/TransactionForm'
 import TransactionList from './components/transactions/transactionList'
 import IncomeExpenses from './components/transactions/IncomeExpenses'
+import ExpenseChart from './components/ExpenseChart'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
                 <IncomeExpenses />
               </div>
               <div className='container w-9/12'>
+                <ExpenseChart />
                 <TransactionList />
               </div>
             </div>
