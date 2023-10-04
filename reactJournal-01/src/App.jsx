@@ -20,7 +20,7 @@ function App() {
                 <TransactionForm />
                 <IncomeExpenses />
               </div>
-              <div className='container w-9/12'>
+              <div className='container w-9/12 flex flex-col'>
                 <ExpenseChart />
                 <TransactionList />
               </div>
