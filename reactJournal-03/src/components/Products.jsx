@@ -12,7 +12,7 @@ export function Products({ products }) {
                                 src={product.thumbnail}
                                 alt={product.description} />
                             <div>
-                                <strong>{product.title}</strong>
+                                <span>{product.title}</span> - ${product.price}
                             </div>
                             <div>
                                 <button>
