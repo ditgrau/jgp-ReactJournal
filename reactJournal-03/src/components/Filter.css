@@ -1,0 +1,13 @@
+.filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* afecta solo a los hijos, no a nietos */
+.filter > div {
+    display: flex;
+    gap: 1rem;
+}
