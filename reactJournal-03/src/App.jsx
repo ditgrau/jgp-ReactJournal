@@ -2,6 +2,7 @@ import { Products } from './components/Products'
 import { Header } from './components/Header';
 import { products as initialProducts } from './mocks/products.json'
 import { useState } from 'react';
+import { Filter } from './components/Filter';
 
 function App() {
 
@@ -33,10 +34,12 @@ function App() {
 
   const filteredProducts = filterProducts(products)
 
-  // pasamos la funcion de actualizacion de estado "setFilters" por prop "changeFilters"
+  // pasamos la funcion de actualizacion de estado "setFilters" por prop "onChange" directamente al nieto 
   return (
     <>
-      <Header changeFilters={setFilters} />
+      <Header>
+        <Filter onChange={setFilters} />
+      </Header>
       <Products products={filteredProducts} />
     </>
   )
