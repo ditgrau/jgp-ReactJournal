@@ -1,12 +1,29 @@
 import { useState } from 'react';
 import './Filter.css'
 
-export function Filter() {
+export function Filter({ onChange }) {
 
     const [minPrice, setMinPrice] = useState(0);
 
     const handleChangeMinPrice = (e) => {
+        // setea dos estados
         setMinPrice(e.target.value)
+        onChange(prevState => (
+            {
+                ...prevState,
+                minPrice: e.target.value
+            }
+        ))
+    }
+
+    // copia el objeto del estado incial (app) y setea la categoria
+    const handleChangeCategory = (e) => {
+        onChange(prevState => (
+            {
+                ...prevState,
+                category: e.target.value
+            }
+        ))
     }
 
     return (
@@ -22,7 +39,7 @@ export function Filter() {
             </div>
             <div>
                 <label htmlFor="category">Categoría</label>
-                <select id="category">
+                <select id="category" onChange={handleChangeCategory}>
                     <option value='all'>Todas</option>
                     <option value='laptops'>Portátiles</option>
                     <option value='smartphones'>Smartphones</option>

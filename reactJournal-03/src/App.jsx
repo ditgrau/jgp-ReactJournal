@@ -14,6 +14,8 @@ function App() {
     minPrice: 0
   })
 
+  console.log(filters)
+
   //filtro: muestra todos los productos que coincidan con el estado inicial o con los nuevos valores asignados
   //en el parametro le pasamos los products del mock
   const filterProducts = (products) => {
@@ -23,7 +25,7 @@ function App() {
         product.price >= filters.minPrice &&
         (
           filters.category === 'all' ||
-          filters.category === filters.category
+          product.category === filters.category
         )
       )
     })
@@ -31,9 +33,10 @@ function App() {
 
   const filteredProducts = filterProducts(products)
 
+  // pasamos la funcion de actualizacion de estado "setFilters" por prop "changeFilters"
   return (
     <>
-      <Header />
+      <Header changeFilters={setFilters} />
       <Products products={filteredProducts} />
     </>
   )
