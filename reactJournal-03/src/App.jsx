@@ -3,24 +3,14 @@ import { Header } from './components/Header';
 import { products as initialProducts } from './mocks/products.json'
 import { useState } from 'react';
 
-function App() {
-
-  const [products] = useState(initialProducts);
-
-  // estado general para los filtros, en lugar de un estado por filtro
-  // filtro por categoria y por precio
+function useFilters () {
   const [filters, setFilters] = useState({
     category: 'all',
     minPrice: 0
   })
 
-  console.log(filters)
-
-  //filtro: muestra todos los productos que coincidan con el estado inicial o con los nuevos valores asignados
-  //en el parametro le pasamos los products del mock
   const filterProducts = (products) => {
     return products.filter(product => {
-      // la sintaxis del .filter es como la del .map
       return (
         product.price >= filters.minPrice &&
         (
@@ -30,6 +20,14 @@ function App() {
       )
     })
   }
+
+  return  {filterProducts , setFilters }
+}
+
+function App() {
+
+  const [products] = useState(initialProducts);
+  const { filterProducts , setFilters } = useFilters()
 
   const filteredProducts = filterProducts(products)
 
