@@ -1,10 +1,11 @@
-//renderiza el children que tiene cuando se le llama
-export function Header({ children }) {
+import { Filter } from "./Filter"
+
+export function Header({ changeFilters }) {
     return (
         <>
             <header>
                 <h1>React Shop</h1>
-                {children}
+                <Filter onChange={changeFilters} />
             </header>
         </>
     )
